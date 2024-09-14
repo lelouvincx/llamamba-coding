@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [{ name = "lelouvincx", email = "dinhminhchinh3357@gmail.com" }]
+name = "llamamba-coding"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["sample", "setuptools", "development"]
+
+dependencies = ["llama-index==0.11.9", "openai"]
+
+[project.optional-dependencies]
+dev = ["check-manifest", "pyright", "ruff", "black"]
+test = ["coverage"]
+
+[project.scripts]
+main = "main"
+
+[tool.ruff]
+line-length = 120
+exclude = ["*/migrations/*"]
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["F"]
+ignore = ["W", "F401"]
+fixable = ["ALL"]
+
+[tool.pyright]
+typeCheckingMode = "off"
+
+[tool.black]
+line-length = 120
